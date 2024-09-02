@@ -69,15 +69,17 @@ namespace _9000
         // return: product of odd numbers from 1 to n
         // n = 5 return 15 (1*3*5)
         // n = 6 return 15 (1*3*5)
-        public static int oddsProduct(int n) 
+        public static int oddsProduct(int n)
         {
-            return 0;
-
+            if (n % 2 == 0)
+                n--;
+            return oddsProductHelp(n);
         }
-        public static int oddsProductHelp(int n) 
+        public static int oddsProductHelp(int n)
         {
-            return 0;
+            if (n == 1) return 1;
 
+            return n * oddsProductHelp(n - 2);
         }
         //7
         // param: 2 positive numbers
@@ -87,8 +89,9 @@ namespace _9000
         // n=10 m=3 result = 30
         public static int mult(int n, int m)
         {
-            return 0;
-
+            if (m == 0)
+                return 0;
+            return n + mult(n, m - 1);
         }
         //8
         // param: 2 positive numbers
@@ -98,8 +101,9 @@ namespace _9000
         // n=10 m=3 result = 3
         public static int quotient(int n, int m)
         {
-            return 0;
-
+            if (n == m) return 1;
+            if (n < m) return 0;
+            return (1 + quotient(n - m, m));
         }
         //9
         // param: 2 positive numbers
@@ -109,8 +113,8 @@ namespace _9000
         // n=10 m=3 result = 1
         public static int remainder(int n, int m)
         {
-            return 0;
-
+            if (n < m) return n;
+            return remainder((n - m), m);
 
         }
         //10
@@ -119,9 +123,22 @@ namespace _9000
         // n = 291655 return 8 (9-1 > 9-2,6-1,6-5,5-5)
         public static int biggestDifferenceBetweenTwoAdjacentDigits(int num)
         {
-            return 0;
-
+            if (num < 10) return 0;
+            int leftDiff = biggestDifferenceBetweenTwoAdjacentDigits(num / 10);
+            int rightDiff = num % 10 - (num / 10) % 10;
+            if (rightDiff > leftDiff)
+                return rightDiff;
+            return leftDiff;
         }
+
+        public static int biggestDiff2(int num) //another solution for the above
+        {
+            if (num < 10) return 0;
+            int digit = num % 10;
+            num = num / 10;
+            return Math.Max(Math.Abs(digit - num % 10), biggestDiff2(num));
+        }
+
 
 
 
