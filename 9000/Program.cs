@@ -37,27 +37,33 @@ namespace _9000
         {
             return 0;
 
-
         }
+
         //4
         // param: positive number
         // return: sum of digits over and over until sum is one digit
         // 991 -> 19 -> 10 -> 1
-        public static int sumOfDigits(int n) //פעולה עוטפת
+        // TIP:
+        // first write sumOfDigitsHelp. see the issue you get when calling with, for example, 94
+        // then write sumOfDigits that calls sumOfDigitsHelp to fix this
+        public static int sumOfDigits(int n)
         {
             return 0;
 
         }
+        
+        //start by writing this
         public static int sumOfDigitsHelp(int n)
         {
             return 0;
 
         }
         //5
-        // param: double number
+        // param: double positive number
         // return: fractional part
         // 991.123 -> 0.123
         // use only +/-
+        // tip: think like a little kid...
         public static double fractionalPart(double num)
         {
             return 0;
@@ -69,78 +75,27 @@ namespace _9000
         // return: product of odd numbers from 1 to n
         // n = 5 return 15 (1*3*5)
         // n = 6 return 15 (1*3*5)
+        // tip: write oddsProductHelp for odd numbers, then add a wrapper (oddsProduct) to handle even numbers
         public static int oddsProduct(int n)
         {
-            if (n % 2 == 0)
-                n--;
-            return oddsProductHelp(n);
+            return 0;
+
         }
         public static int oddsProductHelp(int n)
         {
-            if (n == 1) return 1;
+            return 0;
 
-            return n * oddsProductHelp(n - 2);
         }
-        //7
-        // param: 2 positive numbers
-        // return: n*m
-        // use only +/-
-        // n=8 m=2 reuslt = 16
-        // n=10 m=3 result = 30
-        public static int mult(int n, int m)
-        {
-            if (m == 0)
-                return 0;
-            return n + mult(n, m - 1);
-        }
+
         //8
-        // param: 2 positive numbers
-        // return: n/m
-        // use only +/-
-        // n=8 m=2 reuslt = 4
-        // n=10 m=3 result = 3
-        public static int quotient(int n, int m)
-        {
-            if (n == m) return 1;
-            if (n < m) return 0;
-            return (1 + quotient(n - m, m));
-        }
-        //9
-        // param: 2 positive numbers
-        // return: n%m
-        // use only +/-
-        // n=8 m=2 reuslt = 0
-        // n=10 m=3 result = 1
-        public static int remainder(int n, int m)
-        {
-            if (n < m) return n;
-            return remainder((n - m), m);
-
-        }
-        //10
         // param: positive number
-        // return: biggestDifferenceBetweenTwoAdjacentDigits
+        // return: biggest Difference Between Two AdjacentDigits
         // n = 291655 return 8 (9-1 > 9-2,6-1,6-5,5-5)
-        public static int biggestDifferenceBetweenTwoAdjacentDigits(int num)
+        public static int biggestDiff(int num) //another solution for the above
         {
-            if (num < 10) return 0;
-            int leftDiff = biggestDifferenceBetweenTwoAdjacentDigits(num / 10);
-            int rightDiff = num % 10 - (num / 10) % 10;
-            if (rightDiff > leftDiff)
-                return rightDiff;
-            return leftDiff;
+            return 0;
+
         }
-
-        public static int biggestDiff2(int num) //another solution for the above
-        {
-            if (num < 10) return 0;
-            int digit = num % 10;
-            num = num / 10;
-            return Math.Max(Math.Abs(digit - num % 10), biggestDiff2(num));
-        }
-
-
-
 
     }
 }
