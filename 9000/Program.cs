@@ -46,6 +46,7 @@ namespace _9000
         // TIP:
         // first write sumOfDigitsHelp. see the issue you get when calling with, for example, 94
         // then write sumOfDigits that calls sumOfDigitsHelp to fix this
+        // make sure you solution handles: 1,999,999,999 → 82 → 10 → 1
         public static int sumOfDigits(int n)
         {
             return 0;
