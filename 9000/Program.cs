@@ -39,7 +39,7 @@ namespace _9000
 
         }
 
-        //4
+        //4 - רשות
         // param: positive number
         // return: sum of digits over and over until sum is one digit
         // 991 -> 19 -> 10 -> 1
@@ -71,7 +71,7 @@ namespace _9000
 
 
         }
-        //6
+        //6 - רשות
         // param: positive number
         // return: product of odd numbers from 1 to n
         // n = 5 return 15 (1*3*5)
@@ -90,8 +90,9 @@ namespace _9000
 
         //8
         // param: positive number
-        // return: biggest Difference Between Two AdjacentDigits
+        // return: biggest Difference Between Two Adjacent Digits
         // n = 291655 return 8 (9-1 > 9-2,6-1,6-5,5-5)
+        // tip - start by thinking what is the base case
         public static int biggestDiff(int num) //another solution for the above
         {
             return 0;
